@@ -2,32 +2,31 @@
 
 	function select() {
 
-		$cursos = array();
-		$fp = fopen('cursos.txt', 'r');
+		$pessoas = array();
+		$fp = fopen('pessoas.txt', 'r');
 
         if($fp) {
             while(!feof($fp)) {
 				$arr = array();
-                $id = fgets($fp);
+                $cpf = fgets($fp);
 				$dados = fgets($fp);
 				if(!empty($dados)) {
 					$arr = explode("#", $dados);
-					$cursos[$id] = $arr;
+					$pessoas[$cpf] = $arr;
 				}
 			}
 			fclose($fp);
 		}
 
-		return $cursos;
+		return $pessoas;
 	}
 
-	function select_where($id) {
+	function select_where($cpf) {
 
-		$cursos = select();
+		$pessoas = select();
 
-		foreach ($cursos as $chave => $dados) {
-			// echo "$cpf=$chave<br>";
-			if(strcmp($id, trim($chave)) == 0) { 
+		foreach ($pessoas as $chave => $dados) {
+			if(strcmp($cpf, trim($chave)) == 0) { 
 				return $dados;
 			}
 		}
@@ -35,16 +34,16 @@
 		return null;	
 	}
 
-	function insert($curso) {
+	function insert($pessoas) {
 
-		$fp = fopen('cursos.txt', 'a+');
+		$fp = fopen('pessoas.txt', 'a+');
 
 		if ($fp) {
-			foreach($curso as $id => $dados) {
+			foreach($pessoas as $cpf => $dados) {
 				if(!empty($dados)) {
-					fputs($fp, $id);
+					fputs($fp, $cpf);
 					fputs($fp, "\n");
-					$linha=$dados['nome']."#".$dados['sigla']."#".$dados['tempo'];
+					$linha=$dados['nome']."#".$dados['endereco']."#".$dados['telefone'];
 					fputs($fp, $linha);
 					fputs($fp, "\n");
 				}
@@ -54,20 +53,20 @@
 		}
 	}
 
-	function update($new, $id) {
+	function update($new, $cpf) {
 
-		$cursos = select();
+		$pessoas = select();
 
 		$fp = fopen('bkp.txt', 'a+');
 
 		if ($fp) {
-			foreach($cursos as $chave => $dados) {
+			foreach($pessoas as $chave => $dados) {
 				if(!empty($dados)) {
 					fputs($fp, $chave);
-					if($id == trim($chave)){
-						foreach($new as $new_id => $new_dados) {
+					if($cpf == trim($chave)){
+						foreach($new as $new_cpf => $new_dados) {
 							if(!empty($new_dados)) {
-								$linha=$new_dados['nome']."#".$new_dados['sigla']."#".$new_dados['tempo']."\n";
+								$linha=$new_dados['nome']."#".$new_dados['endereco']."#".$new_dados['telefone']."\n";
 							}
 						}
 					}
@@ -79,13 +78,13 @@
 			fclose($fp);
 			echo "<script> alert('[OK] Pessoa Física Alterada com Sucesso!') </script>";
 
-			unlink("cursos.txt");
-			rename("bkp.txt", "cursos.txt");
+			unlink("pessoas.txt");
+			rename("bkp.txt", "pessoas.txt");
 		}
 	}
 
 	function delete() {
-
+ 
 	}
 
 ?>

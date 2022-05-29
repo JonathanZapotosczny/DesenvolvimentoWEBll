@@ -27,10 +27,10 @@
                             <input 
                                 type="text" 
                                 class="form-control" 
-                                name="id" 
-                                placeholder="id"
+                                name="cpf" 
+                                placeholder="CPF"
                             />
-                            <label for="id">CPF</label>
+                            <label for="cpf">CPF</label>
                         </div>
                     </div>
                 </div>
@@ -53,10 +53,10 @@
                             <input 
                                 type="text" 
                                 class="form-control" 
-                                name="sigla" 
-                                placeholder="Sigla"
+                                name="endereco" 
+                                placeholder="Endereco"
                             />
-                            <label for="sigla">Endereço</label>
+                            <label for="endereco">Endereço</label>
                         </div>
                     </div>
                 </div>
@@ -66,10 +66,10 @@
                             <input 
                                 type="tel"
                                 class="form-control" 
-                                name="tempo" 
-                                placeholder="Tempo"
+                                name="telefone" 
+                                placeholder="Telefone"
                             />
-                            <label for="tempo">Telefone</label>
+                            <label for="telefone">Telefone</label>
                         </div>
                     </div>
                 </div>

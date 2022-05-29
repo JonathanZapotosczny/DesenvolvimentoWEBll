@@ -28,12 +28,12 @@
                             <input 
                                 type="text" 
                                 class="form-control" 
-                                name="id" 
-                                placeholder="id"
-                                value="<?php echo $_GET['id']; ?>"
+                                name="cpf" 
+                                placeholder="cpf"
+                                value="<?php echo $_GET['cpf']; ?>"
                                 readonly="true"
                             />
-                            <label for="id">CPF</label>
+                            <label for="cpf">CPF</label>
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                             <input 
                                 type="text" 
                                 class="form-control" 
-                                name="sigla" 
-                                placeholder="Sigla"
-                                value="<?php echo $_GET['sigla']; ?>"
+                                name="endereco" 
+                                placeholder="Endereco"
+                                value="<?php echo $_GET['endereco']; ?>"
                             />
-                            <label for="sigla">Endereço</label>
+                            <label for="endereco">Endereço</label>
                         </div>
                     </div>
                 </div>
@@ -71,11 +71,11 @@
                             <input 
                                 type="tel" 
                                 class="form-control" 
-                                name="tempo" 
-                                placeholder="Tempo"
-                                value="<?php echo $_GET['tempo']; ?>"
+                                name="telefone" 
+                                placeholder="Telefone"
+                                value="<?php echo $_GET['telefone']; ?>"
                             />
-                            <label for="tempo">Telefone</label>
+                            <label for="telefone">Telefone</label>
                         </div>
                     </div>
                 </div>
