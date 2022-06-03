@@ -4,9 +4,9 @@
 
 		$ABSPATH = dirname( __FILE__ );
 
-		$file = $ABSPATH . "views/" . $class_name . '.php';
-		$fileM = $ABSPATH . 'models/' . $class_name . '.php';
-		$fileC = $ABSPATH . 'controllers/' . $class_name . '.php';
+		$file = $ABSPATH . '/views/' . $class_name . '.php';
+		$fileM = $ABSPATH . '/models/' . $class_name . '.php';
+		$fileC = $ABSPATH . '/controllers/' . $class_name . '.php';
 
 		if(!file_exists( $file )) {
 			if(!file_exists( $fileM )) {
@@ -24,3 +24,4 @@
 	}
 
 	spl_autoload_register('autoload');
+?>
