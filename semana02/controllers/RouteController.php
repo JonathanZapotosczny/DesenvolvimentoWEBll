@@ -12,15 +12,10 @@
 
             $dados = explode("/", $_POST['acao']);
     
-            if(strcmp($dados[0], "cursos") == 0) {
+            if(strcmp($dados[0], "pessoa") == 0) {
                 PessoaController::index();
             }
-            else if(strcmp($dados[0], "alunos") == 0) {
-                // AlunoController::index();
-            }
-            else if(strcmp($dados[0], "turmas") == 0) {
-                // TurmaController::index();
-            }
+         
         }
     }
 ?>

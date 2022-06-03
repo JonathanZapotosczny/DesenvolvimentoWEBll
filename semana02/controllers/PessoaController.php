@@ -5,7 +5,7 @@
 	class PessoaController {
 
 		public static function index() {
-			echo "<script>window.location='../views/cursoIndex.php'</script>";
+			echo "<script>window.location='../views/viewMain.php'</script>";
 		}
 
 		public static function rotas() {
@@ -46,7 +46,7 @@
 
 			if(!empty($pessoa)) {
 
-				$url = "../views/viewAlterar.php?id=$pessoa->cpf";
+				$url = "../views/viewAlterar.php?cpf=$pessoa->cpf";
                 $url .= "&nome=$pessoa->nome";
                 $url .= "&endereco=$pessoa->endereco";
                 $url .= "&telefone=$pessoa->telefone";
