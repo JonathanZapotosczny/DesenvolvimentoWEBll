@@ -5,7 +5,7 @@
         // Nome do DB
         public const DB_NOME = 'mysql';
         // Usuário do DB
-        public const DB_USUARIO = '';
+        public const DB_USUARIO = 'root';
         // Senha do DB
         public const DB_SENHA = '';
         // Charset da conexão PDO
