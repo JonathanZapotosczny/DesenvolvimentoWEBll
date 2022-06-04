@@ -4,7 +4,7 @@
 
 		$ABSPATH = dirname( __FILE__ );
 
-		$file = $ABSPATH . '/views/' . $class_name . '.php';
+		$file = $ABSPATH . '/' . $class_name . '.php';
 		$fileM = $ABSPATH . '/models/' . $class_name . '.php';
 		$fileC = $ABSPATH . '/controllers/' . $class_name . '.php';
 
