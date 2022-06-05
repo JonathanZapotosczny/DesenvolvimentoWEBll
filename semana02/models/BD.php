@@ -4,7 +4,7 @@
 
     class BD {
 
-        public function connection() {
+        public static function connection() {
 
             $str_conn = "mysql:host=localhost;dbname=".config::DB_NOME;
 
@@ -12,7 +12,7 @@
                 array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES ".config::DB_CHARSET));
     	}
 
-        public function select($tabela, $orderby="") {
+        public static function select($tabela, $orderby="") {
 
             $conn = self::connection();
     		$stmt = $conn->prepare("SELECT * FROM $tabela $orderby" );
@@ -21,7 +21,7 @@
             return $stmt;
         }
 
-        public function selectFind($tabela, $cpf) {
+        public static function selectFind($tabela, $cpf) {
 
             $sql = "SELECT * FROM $tabela WHERE $cpf";
 
