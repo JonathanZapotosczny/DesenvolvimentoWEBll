@@ -31,6 +31,7 @@
 		public static function store() {
 
 			$data = array(
+				"cpf" => $_POST["cpf"],
 				"nome" => $_POST["nome"],
 				"endereco" => $_POST["endereco"],
 				"telefone" => $_POST["telefone"]
