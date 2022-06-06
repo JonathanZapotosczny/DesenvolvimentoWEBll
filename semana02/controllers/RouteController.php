@@ -10,12 +10,18 @@
 
         public static function rotas() {
 
-            $dados = explode("/", $_POST['acao']);
-    
-            if(strcmp($dados[0], "pessoa") == 0) {
-                PessoaController::index();
-            }
-         
+            // echo "<script>alert('cadastrar')</script>";
+        $dados = explode("/", $_POST['acao']);
+
+        if(strcmp($dados[0], "cadastrar") == 0) {
+            PessoaController::create();
+        }
+        else if(strcmp($dados[0], "alterar") == 0) {
+            PessoaController::edit($dados[1]);
+        }
+        else if(strcmp($dados[0], "remover") == 0) {
+            PessoaController::destroy($dados[1]);
         }
     }
+}
 ?>

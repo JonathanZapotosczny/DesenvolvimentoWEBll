@@ -8,21 +8,6 @@
 			echo "<script>window.location='../views/viewMain.php'</script>";
 		}
 
-		public static function rotas() {
-
-			// echo "<script>alert('cadastrar')</script>";
-			$dados = explode("/", $_POST['acao']);
-
-            if(strcmp($dados[0], "cadastrar") == 0) {
-				self::create();
-            }
-			else if(strcmp($dados[0], "alterar") == 0) {
-				self::edit($dados[1]);
-			}
-			else if(strcmp($dados[0], "remover") == 0) {
-				self::destroy($dados[1]);
-			}
-		}
 
 		public static function create() {
             echo "<script>window.location='../views/viewCadastrar.php'</script>";
