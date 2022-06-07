@@ -53,7 +53,11 @@
 			echo "<script>window.location='../views/viewMain.php'</script>";
 		}
 
-		public static function destroy() {
+		public static function destroy($cpf) {
+
+			$pessoa = Pessoa::find($cpf);
+		
+			Pessoa::destroy($cpf, $pessoa);
 
 			echo "<script>window.location='../views/viewMain.php'</script>";
 		}
